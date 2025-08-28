@@ -231,6 +231,24 @@ img, video, canvas, svg {
   block-size: auto; /* [3] */
 }
 
+/* Opinionated but helpful `img` ergonomics.
+ *
+ * 1. Offset `alt` text from surrounding text in the event of a failed image.
+ * 2. Helpful defaults for LQIP techniques that utilise `background-image`:
+ *    csswizardry.com/2023/09/the-ultimate-lqip-lcp-technique
+ * 3. All `img`s automatically participate in CSS Shapes by carrying a dormant
+ *    `shape-margin`. Inert (i.e. `0`) if `--defaults-shape-margin` is not
+ *    defined by consumer. This means it’s either set to something custom or
+ *    isn’t set at all—defaults.css doesn’t make any decisions here.
+   ========================================================================== */
+
+img {
+  font-style: italic; /* [1] */
+  background-repeat: no-repeat; /* [2] */
+  background-size: cover; /* [2] */
+  shape-margin: var(--defaults-shape-margin, 0); /* [3] */
+}
+
 /* As `picture`s are effectively replaced by the `img`s they contain, set its
  * display state to `contents` and delegate layout to the `img`.
    ========================================================================== */
