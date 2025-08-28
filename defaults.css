@@ -16,6 +16,21 @@
 
 
 
+/* Comfortable `box-sizing` defaults.
+   ========================================================================== */
+
+html {
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+
+
+
+
 /* Remove `margin` and `padding` from all relevant elements.
  *
  * Each element listed carries some `margin` or `padding` in one or more
