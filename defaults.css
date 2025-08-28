@@ -1,0 +1,43 @@
+/* ==========================================================================
+   #DEFAULTS.CSS
+   ========================================================================== */
+
+/**
+ * defaults.css is part reset, part normalisation.
+ *
+ * It is designed to give a consistent baseline and some lightly opinionated,
+ * ergonomic improvements.
+ *
+ * defaults.css is benchmarked against Baseline browsers and uses modern
+ * patterns and paradigms.
+ */
+
+
+
+
+
+/* Remove `margin` and `padding` from all relevant elements.
+ *
+ * Each element listed carries some `margin` or `padding` in one or more
+ * Baseline browsers.
+   ========================================================================== */
+
+/* Text Elements */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+
+/* Lists */
+ul, ol, dl, dd,
+
+/* Tables */
+th, td,
+
+/* Containers */
+body, figure, dialog,
+
+/* Form Elements */
+fieldset, legend,
+input, textarea, button, select, option {
+  margin:  0;
+  padding: 0;
+}
