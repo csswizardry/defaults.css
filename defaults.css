@@ -227,3 +227,11 @@ img, video, canvas, svg {
   max-inline-size: 100%; /* [3] */
   max-block-size: 100%; /* [3] */
 }
+
+/* As `picture`s are effectively replaced by the `img`s they contain, set its
+ * display state to `contents` and delegate layout to the `img`.
+   ========================================================================== */
+
+picture {
+  display: contents;
+}
