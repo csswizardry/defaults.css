@@ -188,3 +188,21 @@ table {
     border-collapse: collapse;
   border-spacing: 0;
 }
+
+
+
+
+
+/* Ensure form elements inherit relevant font styles.
+ *
+ * TODO: github.com/csswizardry/defaults.css/issues/1
+   ========================================================================== */
+
+input, textarea, button, select, option {
+  font: inherit;
+  color: inherit;
+}
+
+::placeholder {
+  color: inherit;
+}
