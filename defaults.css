@@ -206,3 +206,24 @@ input, textarea, button, select, option {
 ::placeholder {
   color: inherit;
 }
+
+
+
+
+
+/* Media elements’ opinionated defaults.
+ *
+ * Most media can/should scale responsively by default.
+ *
+ * 1. Remove pesky whitespace beneath media elements.
+ * 2. Ensure media can scale responsively.
+ * 3. Ensure media elements never exceed their container’s size.
+   ========================================================================== */
+
+img, video, canvas, svg {
+  display: block; /* [1] */
+  inline-size: auto; /* [2] */
+  block-size: auto; /* [2] */
+  max-inline-size: 100%; /* [3] */
+  max-block-size: 100%; /* [3] */
+}
