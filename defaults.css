@@ -62,3 +62,90 @@ input, textarea, button, select, option {
   margin:  0;
   padding: 0;
 }
+
+
+
+
+
+/**
+ * Set consistent `h1` sizing across browsers.
+ *
+ * Blink and WebKit style nested `h1`s differently. Let’s normalise to the
+ * generic use-case in keeping with Firefox. Only scope the rule to relevant
+ * browser to reduce DevTools noise.
+   ========================================================================== */
+
+@supports selector(:-webkit-any(article, aside, nav, section) h1) {
+
+  h1 {
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+  }
+
+}
+
+
+
+
+
+/**
+ * Set consistent bolding across browsers.
+ *
+ * Firefox and Blink both set `bolder`, so nested elements compound. Safari
+ * sets `bold` which is more predictable/desirable.
+   ========================================================================== */
+
+strong, b {
+  font-weight: bold;
+}
+
+
+
+
+
+/**
+ * More predictable styling for code-like elements.
+ *
+ * This has always been a strange one. Browsers tend to set a smaller font size
+ * for code-like elements. The double-`monospace` hack fixes that, and the
+ * `font-size: inherit;` keeps the size contextual—useful for `code` in
+ * headings, etc.
+   ========================================================================== */
+
+pre, code, kbd, samp {
+  font-family: monospace, monospace;
+  font-size: inherit;
+}
+
+
+
+
+
+/**
+ * Set consistent `hr` styling across browsers.
+ *
+ * Safari only sets `border-top-*` styles and Blink doesn’t set `color: gray;`.
+ * This ruleset normalises across all browsers.
+   ========================================================================== */
+
+hr {
+  color: gray;
+  border: 1px inset;
+}
+
+
+
+
+
+/**
+ * More comfortable `table` defaults.
+ *
+ * `tables`’ default styling has always looked a little old-school. This sets
+ * them to something a little more palatable.
+   ========================================================================== */
+
+table {
+    border-collapse: collapse;
+  border-spacing: 0;
+}
