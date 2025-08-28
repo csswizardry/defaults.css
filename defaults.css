@@ -154,7 +154,7 @@ strong, b {
  * headings, etc.
    ========================================================================== */
 
-pre, code, kbd, samp {
+pre, code, kbd, samp, output {
   font-family: monospace, monospace;
   font-size: inherit;
 }
