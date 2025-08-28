@@ -37,6 +37,38 @@ html {
 
 
 
+/* Prevent text-rescaling on device orientation changes. Only scope the rule to
+ * relevant browser to reduce DevTools noise.
+   ========================================================================== */
+
+@supports (-webkit-text-size-adjust: none) {
+
+  html {
+    -webkit-text-size-adjust: none;
+  }
+
+}
+
+@supports (-moz-text-size-adjust: none) {
+
+  html {
+    -moz-text-size-adjust: none;
+  }
+
+}
+
+@supports (text-size-adjust: none) {
+
+  html {
+    text-size-adjust: none;
+  }
+
+}
+
+
+
+
+
 /* Remove `margin` and `padding` from all relevant elements.
  *
  * Each element listed carries some `margin` or `padding` in one or more
