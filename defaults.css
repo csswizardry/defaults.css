@@ -215,17 +215,20 @@ input, textarea, button, select, option {
  *
  * Most media can/should scale responsively by default.
  *
- * 1. Remove pesky whitespace beneath media elements.
- * 2. Ensure media can scale responsively.
- * 3. Ensure media elements never exceed their container’s size.
+ * 1. Remove pesky whitespace beneath media elements. Alternatives include
+ *    `display: block;`.
+ * 2. Ensure media remains fluid and never exceeds its container’s width.
+ *    Set in logical properties: corresponds to `max-width: 100%;` in
+ *    horizontal–top-to-bottom writing modes.
+ * 3. Ensure media’s height maintains proportional when `width` is set in HTML.
+ *    Set in logical properties: corresponds to `height: auto;` in
+ *    horizontal–top-to-bottom writing modes.
    ========================================================================== */
 
 img, video, canvas, svg {
-  display: block; /* [1] */
-  inline-size: auto; /* [2] */
-  block-size: auto; /* [2] */
-  max-inline-size: 100%; /* [3] */
-  max-block-size: 100%; /* [3] */
+  vertical-align: middle; /* [1] */
+  max-inline-size: 100%; /* [2] */
+  block-size: auto; /* [3] */
 }
 
 /* As `picture`s are effectively replaced by the `img`s they contain, set its
