@@ -288,3 +288,15 @@ img {
 picture {
   display: contents;
 }
+
+
+
+
+
+/* Place `:target`ed elements a comfortable distance from the edge of the
+ * viewport. Inert unless configured.
+   ========================================================================== */
+
+:target {
+  scroll-margin-block-start: var(--defaults-scroll-margin, 0);
+}
