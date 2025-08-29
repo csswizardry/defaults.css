@@ -115,6 +115,22 @@ input, textarea, button, select, option {
 
 
 
+/* Reintroduce `margin-bottom` for consistent vertical rhythm. Inert unless
+ * configured.
+   ========================================================================== */
+h1, h2, h3, h4, h5, h6,
+p, blockquote, pre, hr,
+ul, ol, dl,
+table,
+figure, dialog,
+fieldset {
+  margin-block-end: var(--defaults-margin-bottom, 0);
+}
+
+
+
+
+
 /* Set consistent `font-family` across browsers.
  *
  * For some reason, Firefox for Android sets `sans-serif` as its default.
