@@ -37,6 +37,22 @@ html {
 
 
 
+/* Make keyboard navigation a little less disorientating by smoothly scrolling
+ * (rather than jumping) to elements focused outside of the viewport.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+
+}
+
+
+
+
+
 /* Prevent text-rescaling on device orientation changes. Only scope the rule to
  * relevant browser to reduce DevTools noise.
    ========================================================================== */
