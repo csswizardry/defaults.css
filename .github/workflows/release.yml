@@ -31,7 +31,6 @@ jobs:
         with:
           files: |
             dist/defaults.min.css
-            dist/defaults.min.css.map
 
       - name: Publish to npm
         env:

@@ -22,7 +22,6 @@
   "style": "dist/defaults.min.css",
   "files": [
     "dist/defaults.min.css",
-    "dist/defaults.min.css.map",
     "LICENSE",
     "README.md"
   ],
@@ -33,7 +32,6 @@
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "csso": "^5.0.5",
     "csso-cli": "^4.0.2",
     "rimraf": "^6.0.1"
   },
