@@ -29,11 +29,12 @@
   "scripts": {
     "clean": "rimraf dist .tmp",
     "prebuild": "rimraf dist .tmp && mkdir -p dist .tmp",
-    "build": "node scripts/banner.js defaults.css > .tmp/defaults.bannered.css && csso .tmp/defaults.bannered.css --comments exclamation -o dist/defaults.min.css -m file",
+    "build": "node scripts/banner.js defaults.css > .tmp/defaults.bannered.css && csso .tmp/defaults.bannered.css --comments exclamation -o dist/defaults.min.css",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
     "csso": "^5.0.5",
+    "csso-cli": "^4.0.2",
     "rimraf": "^6.0.1"
   },
   "publishConfig": {
