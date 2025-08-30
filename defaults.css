@@ -37,22 +37,6 @@ html {
 
 
 
-/* Make keyboard navigation a little less disorientating by smoothly scrolling
- * (rather than jumping) to elements focused outside of the viewport.
-   ========================================================================== */
-
-@media (prefers-reduced-motion: no-preference) {
-
-  html:focus-within {
-    scroll-behavior: smooth;
-  }
-
-}
-
-
-
-
-
 /* Prevent text-rescaling on device orientation changes. Only scope the rule to
  * relevant browser to reduce DevTools noise.
    ========================================================================== */
@@ -204,7 +188,7 @@ sup {
 
 
 
-/* Ensure `u` and `ins` don”t look like links.
+/* Ensure `u` and `ins` don’t look like links.
  *
  * Firefox and Blink both set `bolder`, so nested elements compound. Safari
  * sets `bold` which is more predictable/desirable.
@@ -352,6 +336,22 @@ iframe {
   max-inline-size: 100%; /* [2] */
   border: none; /* [3] */
 }
+
+
+
+
+/* Make keyboard navigation a little less disorientating by smoothly scrolling
+ * (rather than jumping) to elements focused outside of the viewport.
+   ========================================================================== */
+
+@media (prefers-reduced-motion: no-preference) {
+
+  html:focus-within {
+    scroll-behavior: smooth;
+  }
+
+}
+
 
 
 
