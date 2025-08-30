@@ -1,4 +1,4 @@
-# defaults.css
+# `defaults.css`
 
 _A thoroughly modern, light-touch CSS reset for people who like writing CSS._
 
@@ -33,7 +33,7 @@ see every element has passed through a million different rulesets and DevTools
 just becomes noise. To that end, `defaults.css` does as little as it can get
 away with.
 
-It even does as far as gating rules behind the relevant `@-rule` where possible,
+It even goes as far as gating rules behind the relevant `@-rule` where possible,
 e.g.:
 
 ```css
