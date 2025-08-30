@@ -164,6 +164,80 @@ html {
 
 
 
+/* Enforce a `font-size` for small.
+ *
+ * Browsers all converge on 13.333px (81.25%) for `small`, but arrive at it via
+ * `font-size: smaller;`. This gives a consistent size.
+   ========================================================================== */
+
+small {
+  font-size: 80%;
+}
+
+
+
+
+
+/* Super- and subscript sizing.
+ *
+ * As with `small`, browsers converge on 13.333px for `sup` and `sub`, but their
+ * positioning also affects the rendered height of their parent element.
+ *
+ * https://github.com/necolas/normalize.css/blob/8.0.1/normalize.css#L120-L139
+   ========================================================================== */
+
+sub,
+sup {
+  font-size: 80%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sub {
+  bottom: -0.25em;
+}
+
+sup {
+  top: -0.5em;
+}
+
+
+
+
+
+/* Abbreviation and definition styling.
+ *
+ * Non-standard (but it should be).
+   ========================================================================== */
+
+@media (hover: hover) {
+
+  abbr[title],
+  dfn[title] {
+    cursor: help;
+  }
+
+}
+
+
+
+
+
+/* Ensure `u` and `ins` don”t look like links.
+ *
+ * Firefox and Blink both set `bolder`, so nested elements compound. Safari
+ * sets `bold` which is more predictable/desirable.
+   ========================================================================== */
+
+u, ins {
+  text-decoration: none;
+}
+
+
+
+
+
 /* Set consistent bolding across browsers.
  *
  * Firefox and Blink both set `bolder`, so nested elements compound. Safari
@@ -219,6 +293,7 @@ hr {
 table {
   border-collapse: collapse;
   border-spacing: 0;
+  font-variant-numeric: tabular-nums;
 }
 
 
