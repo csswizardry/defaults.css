@@ -65,22 +65,6 @@ html {
 
 }
 
-@supports (-moz-text-size-adjust: none) {
-
-  html {
-    -moz-text-size-adjust: none;
-  }
-
-}
-
-@supports (text-size-adjust: none) {
-
-  html {
-    text-size-adjust: none;
-  }
-
-}
-
 
 
 
