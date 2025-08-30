@@ -391,3 +391,29 @@ iframe {
 :target {
   scroll-margin-block-start: var(--defaults-scroll-margin, 0);
 }
+
+
+
+
+/* Click affordances.
+ *
+ * Lightly opinionated but generally helpful. Make interactive, clickable
+ * elements appear as such.
+   ========================================================================== */
+
+@media (hover: hover) {
+
+  summary,
+  :is(button,
+      input:is(
+      [type=submit],
+      [type=button],
+      [type=file],
+      [type=image],
+      [type=reset],
+      [type=checkbox],
+      [type=radio])):not([disabled]) {
+    cursor: pointer;
+  }
+
+}
