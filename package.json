@@ -1,0 +1,36 @@
+{
+  "name": "@csswizardry/defaults.css",
+  "version": "0.1.0",
+  "description": "A thoroughly modern, light-touch CSS reset for people who like writing CSS.",
+  "license": "MIT",
+  "author": "Harry Roberts <harry@csswizardry.com>",
+  "homepage": "https://github.com/csswizardry/defaults.css#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/csswizardry/defaults.css.git"
+  },
+  "bugs": {
+    "url": "https://github.com/csswizardry/defaults.css/issues"
+  },
+  "keywords": ["css", "reset", "normalize", "baseline", "defaults"],
+  "style": "dist/defaults.min.css",
+  "files": [
+    "dist/defaults.min.css",
+    "dist/defaults.min.css.map",
+    "LICENSE",
+    "README.md"
+  ],
+  "scripts": {
+    "clean": "rimraf dist",
+    "build": "mkdir -p dist && lightningcss --minify --sourcemap defaults.css -o dist/defaults.min.css",
+    "prepublishOnly": "npm run build"
+  },
+  "devDependencies": {
+    "lightningcss-cli": "^1.27.0",
+    "rimraf": "^6.0.0"
+  },
+  "publishConfig": {
+    "access": "public",
+    "tag": "latest"
+  }
+}
