@@ -16,372 +16,388 @@
 
 
 
-/* Comfortable `box-sizing` defaults.
+/* defaults.css uses Cascade Layers to manage specificity. You don’t need to do
+ * or know much about them. In fact, if you *don’t* use Cascade Layers in your
+ * project, that makes things even easier. If you do, just ensure that
+ * defaults is registered first.
    ========================================================================== */
-
-html {
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
+@layer defaults {
 
 
 
 
 
-/* Prevent text-rescaling on device orientation changes. Only scope the rule to
- * relevant browser to reduce DevTools noise.
-   ========================================================================== */
-
-@supports (-webkit-text-size-adjust: none) {
+  /* Comfortable `box-sizing` defaults.
+     ========================================================================== */
 
   html {
-    -webkit-text-size-adjust: none;
+    box-sizing: border-box;
   }
 
-}
-
-
-
-
-
-/* Remove `margin` and `padding` from all relevant elements.
- *
- * Each element listed carries some `margin` or `padding` in one or more
- * Baseline browsers.
-   ========================================================================== */
-
-/* Text Elements */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-
-/* Lists */
-ul, ol, dl, dd,
-
-/* Tables */
-th, td,
-
-/* Containers */
-body, figure, dialog,
-
-/* Form Elements */
-fieldset, legend,
-input, textarea, button, select, option {
-  margin:  0;
-  padding: 0;
-}
-
-
-
-
-
-/* Reintroduce `margin-bottom` for consistent vertical rhythm. Inert unless
- * configured.
-   ========================================================================== */
-h1, h2, h3, h4, h5, h6,
-p, blockquote, pre, hr,
-ul, ol, dl,
-table,
-figure, dialog,
-fieldset {
-  margin-block-end: var(--defaults-margin-bottom, 0);
-}
-
-
-
-
-
-/* Set consistent `font-family` across browsers.
- *
- * For some reason, Firefox for Android sets `sans-serif` as its default.
- * Converge on the more common `serif` default.
-   ========================================================================== */
-
-html {
-  font-family: serif;
-}
-
-
-
-
-
-/* Set consistent `h1` sizing across browsers.
- *
- * Blink and WebKit style nested `h1`s differently. Let’s normalise to the
- * generic use-case in keeping with Firefox. Note that they also alter the
- * `margin` but as we’ve removed that above, we don’t need to address it here.
-   ========================================================================== */
-
-h1 {
-  font-size: 2em;
-}
-
-
-
-
-
-/* Enforce a `font-size` for small.
- *
- * Browsers all converge on 13.333px (81.25%) for `small`, but arrive at it via
- * `font-size: smaller;`. This gives a consistent size.
-   ========================================================================== */
-
-small {
-  font-size: 80%;
-}
-
-
-
-
-
-/* Super- and subscript sizing.
- *
- * As with `small`, browsers converge on 13.333px for `sup` and `sub`, but their
- * positioning also affects the rendered height of their parent element.
- *
- * https://github.com/necolas/normalize.css/blob/8.0.1/normalize.css#L120-L139
-   ========================================================================== */
-
-sub,
-sup {
-  font-size: 80%;
-  line-height: 0;
-  position: relative;
-  vertical-align: baseline;
-}
-
-sub {
-  bottom: -0.25em;
-}
-
-sup {
-  top: -0.5em;
-}
-
-
-
-
-
-/* Abbreviation and definition styling.
- *
- * Non-standard (but it should be).
-   ========================================================================== */
-
-@media (hover: hover) {
-
-  abbr[title],
-  dfn[title] {
-    cursor: help;
+  *,
+  *::before,
+  *::after {
+    box-sizing: inherit;
   }
 
-}
 
 
 
 
+  /* Prevent text-rescaling on device orientation changes. Only scope the rule to
+   * relevant browser to reduce DevTools noise.
+     ========================================================================== */
 
-/* Ensure `u` and `ins` don’t look like links.
- *
- * Firefox and Blink both set `bolder`, so nested elements compound. Safari
- * sets `bold` which is more predictable/desirable.
-   ========================================================================== */
+  @supports (-webkit-text-size-adjust: none) {
 
-u, ins {
-  text-decoration: none;
-}
+    html {
+      -webkit-text-size-adjust: none;
+    }
 
-
-
-
-
-/* Set consistent bolding across browsers.
- *
- * Firefox and Blink both set `bolder`, so nested elements compound. Safari
- * sets `bold` which is more predictable/desirable.
-   ========================================================================== */
-
-strong, b {
-  font-weight: bold;
-}
-
-
-
-
-
-/* More predictable styling for code-like elements.
- *
- * This has always been a strange one. Browsers tend to set a smaller font size
- * for code-like elements. The double-`monospace` hack fixes that, and the
- * `font-size: inherit;` keeps the size contextual—useful for `code` in
- * headings, etc.
-   ========================================================================== */
-
-pre, code, kbd, samp, output {
-  font-family: monospace, monospace;
-  font-size: inherit;
-}
-
-
-
-
-
-/* Set consistent `hr` styling across browsers.
- *
- * Safari only sets `border-top-*` styles and Blink doesn’t set `color: gray;`.
- * This ruleset normalises across all browsers.
-   ========================================================================== */
-
-hr {
-  color: gray;
-  border: 1px inset;
-}
-
-
-
-
-
-/* More comfortable `table` defaults.
- *
- * `tables`’ default styling has always looked a little old-school. This sets
- * them to something a little more palatable.
-   ========================================================================== */
-
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
-  font-variant-numeric: tabular-nums;
-}
-
-
-
-
-
-/* Ensure form elements inherit relevant font styles.
- *
- * TODO: github.com/csswizardry/defaults.css/issues/1
-   ========================================================================== */
-
-input, textarea, button, select, option {
-  font: inherit;
-  color: inherit;
-}
-
-::placeholder {
-  color: inherit;
-}
-
-
-
-
-
-/* Media elements’ opinionated defaults.
- *
- * Most media can/should scale responsively by default.
- *
- * 1. Remove pesky whitespace beneath media elements. Alternatives include
- *    `display: block;`.
- * 2. Ensure media remains fluid and never exceeds its container’s width.
- *    Set in logical properties: corresponds to `max-width: 100%;` in
- *    horizontal–top-to-bottom writing modes.
- * 3. Ensure media’s height maintains proportional when `width` is set in HTML.
- *    Set in logical properties: corresponds to `height: auto;` in
- *    horizontal–top-to-bottom writing modes.
-   ========================================================================== */
-
-img, video, canvas, svg {
-  vertical-align: middle; /* [1] */
-  max-inline-size: 100%; /* [2] */
-  block-size: auto; /* [3] */
-}
-
-/* Opinionated but helpful `img` ergonomics.
- *
- * 1. Offset `alt` text from surrounding text in the event of a failed image.
- * 2. Helpful defaults for LQIP techniques that utilise `background-image`:
- *    csswizardry.com/2023/09/the-ultimate-lqip-lcp-technique
- * 3. All `img`s automatically participate in CSS Shapes by carrying a dormant
- *    `shape-margin`. Inert (i.e. `0`) if `--defaults-shape-margin` is not
- *    defined by consumer. This means it’s either set to something custom or
- *    isn’t set at all—defaults.css doesn’t make any decisions here.
-   ========================================================================== */
-
-img {
-  font-style: italic; /* [1] */
-  background-repeat: no-repeat; /* [2] */
-  background-size: cover; /* [2] */
-  shape-margin: var(--defaults-shape-margin, 0); /* [3] */
-}
-
-
-
-
-
-/* iframe defaults.
- *
- * 1. Remove whitespace beneath `iframe`s
- * 2. Ensure `iframe`s remain fluid and never exceed their container’s width.
- * 3. Remove default border.
-   ========================================================================== */
-
-iframe {
-  vertical-align: middle; /* [1] */
-  max-inline-size: 100%; /* [2] */
-  border: none; /* [3] */
-}
-
-
-
-
-/* Make keyboard navigation a little less disorientating by smoothly scrolling
- * (rather than jumping) to elements focused outside of the viewport.
-   ========================================================================== */
-
-@media (prefers-reduced-motion: no-preference) {
-
-  html:focus-within {
-    scroll-behavior: smooth;
   }
 
-}
 
 
 
 
+  /* Remove `margin` and `padding` from all relevant elements.
+   *
+   * Each element listed carries some `margin` or `padding` in one or more
+   * Baseline browsers.
+     ========================================================================== */
 
-/* Place `:target`ed elements a comfortable distance from the edge of the
- * viewport. Inert unless configured.
-   ========================================================================== */
+  /* Text Elements */
+  h1, h2, h3, h4, h5, h6,
+  p, blockquote, pre, hr,
 
-:target {
-  scroll-margin-block-start: var(--defaults-scroll-margin, 0);
-}
+  /* Lists */
+  ul, ol, dl, dd,
 
+  /* Tables */
+  th, td,
 
+  /* Containers */
+  body, figure, dialog,
 
-
-/* Click affordances.
- *
- * Lightly opinionated but generally helpful. Make interactive, clickable
- * elements appear as such.
-   ========================================================================== */
-
-@media (hover: hover) {
-
-  summary,
-  :is(button,
-      input:is(
-      [type=submit],
-      [type=button],
-      [type=file],
-      [type=image],
-      [type=reset],
-      [type=checkbox],
-      [type=radio])):not([disabled]) {
-    cursor: pointer;
+  /* Form Elements */
+  fieldset, legend,
+  input, textarea, button, select, option {
+    margin:  0;
+    padding: 0;
   }
+
+
+
+
+
+  /* Reintroduce `margin-bottom` for consistent vertical rhythm. Inert unless
+   * configured.
+     ========================================================================== */
+  h1, h2, h3, h4, h5, h6,
+  p, blockquote, pre, hr,
+  ul, ol, dl,
+  table,
+  figure, dialog,
+  fieldset {
+    margin-block-end: var(--defaults-margin-bottom, 0);
+  }
+
+
+
+
+
+  /* Set consistent `font-family` across browsers.
+   *
+   * For some reason, Firefox for Android sets `sans-serif` as its default.
+   * Converge on the more common `serif` default.
+     ========================================================================== */
+
+  html {
+    font-family: serif;
+  }
+
+
+
+
+
+  /* Set consistent `h1` sizing across browsers.
+   *
+   * Blink and WebKit style nested `h1`s differently. Let’s normalise to the
+   * generic use-case in keeping with Firefox. Note that they also alter the
+   * `margin` but as we’ve removed that above, we don’t need to address it here.
+     ========================================================================== */
+
+  h1 {
+    font-size: 2em;
+  }
+
+
+
+
+
+  /* Enforce a `font-size` for small.
+   *
+   * Browsers all converge on 13.333px (81.25%) for `small`, but arrive at it via
+   * `font-size: smaller;`. This gives a consistent size.
+     ========================================================================== */
+
+  small {
+    font-size: 80%;
+  }
+
+
+
+
+
+  /* Super- and subscript sizing.
+   *
+   * As with `small`, browsers converge on 13.333px for `sup` and `sub`, but their
+   * positioning also affects the rendered height of their parent element.
+   *
+   * https://github.com/necolas/normalize.css/blob/8.0.1/normalize.css#L120-L139
+     ========================================================================== */
+
+  sub,
+  sup {
+    font-size: 80%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+  }
+
+  sub {
+    bottom: -0.25em;
+  }
+
+  sup {
+    top: -0.5em;
+  }
+
+
+
+
+
+  /* Abbreviation and definition styling.
+   *
+   * Non-standard (but it should be).
+     ========================================================================== */
+
+  @media (hover: hover) {
+
+    abbr[title],
+    dfn[title] {
+      cursor: help;
+    }
+
+  }
+
+
+
+
+
+  /* Ensure `u` and `ins` don’t look like links.
+   *
+   * Firefox and Blink both set `bolder`, so nested elements compound. Safari
+   * sets `bold` which is more predictable/desirable.
+     ========================================================================== */
+
+  u, ins {
+    text-decoration: none;
+  }
+
+
+
+
+
+  /* Set consistent bolding across browsers.
+   *
+   * Firefox and Blink both set `bolder`, so nested elements compound. Safari
+   * sets `bold` which is more predictable/desirable.
+     ========================================================================== */
+
+  strong, b {
+    font-weight: bold;
+  }
+
+
+
+
+
+  /* More predictable styling for code-like elements.
+   *
+   * This has always been a strange one. Browsers tend to set a smaller font size
+   * for code-like elements. The double-`monospace` hack fixes that, and the
+   * `font-size: inherit;` keeps the size contextual—useful for `code` in
+   * headings, etc.
+     ========================================================================== */
+
+  pre, code, kbd, samp, output {
+    font-family: monospace, monospace;
+    font-size: inherit;
+  }
+
+
+
+
+
+  /* Set consistent `hr` styling across browsers.
+   *
+   * Safari only sets `border-top-*` styles and Blink doesn’t set `color: gray;`.
+   * This ruleset normalises across all browsers.
+     ========================================================================== */
+
+  hr {
+    color: gray;
+    border: 1px inset;
+  }
+
+
+
+
+
+  /* More comfortable `table` defaults.
+   *
+   * `tables`’ default styling has always looked a little old-school. This sets
+   * them to something a little more palatable.
+     ========================================================================== */
+
+  table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    font-variant-numeric: tabular-nums;
+  }
+
+
+
+
+
+  /* Ensure form elements inherit relevant font styles.
+   *
+   * TODO: github.com/csswizardry/defaults.css/issues/1
+     ========================================================================== */
+
+  input, textarea, button, select, option {
+    font: inherit;
+    color: inherit;
+  }
+
+  ::placeholder {
+    color: inherit;
+  }
+
+
+
+
+
+  /* Media elements’ opinionated defaults.
+   *
+   * Most media can/should scale responsively by default.
+   *
+   * 1. Remove pesky whitespace beneath media elements. Alternatives include
+   *    `display: block;`.
+   * 2. Ensure media remains fluid and never exceeds its container’s width.
+   *    Set in logical properties: corresponds to `max-width: 100%;` in
+   *    horizontal–top-to-bottom writing modes.
+   * 3. Ensure media’s height maintains proportional when `width` is set in HTML.
+   *    Set in logical properties: corresponds to `height: auto;` in
+   *    horizontal–top-to-bottom writing modes.
+     ========================================================================== */
+
+  img, video, canvas, svg {
+    vertical-align: middle; /* [1] */
+    max-inline-size: 100%; /* [2] */
+    block-size: auto; /* [3] */
+  }
+
+  /* Opinionated but helpful `img` ergonomics.
+   *
+   * 1. Offset `alt` text from surrounding text in the event of a failed image.
+   * 2. Helpful defaults for LQIP techniques that utilise `background-image`:
+   *    csswizardry.com/2023/09/the-ultimate-lqip-lcp-technique
+   * 3. All `img`s automatically participate in CSS Shapes by carrying a dormant
+   *    `shape-margin`. Inert (i.e. `0`) if `--defaults-shape-margin` is not
+   *    defined by consumer. This means it’s either set to something custom or
+   *    isn’t set at all—defaults.css doesn’t make any decisions here.
+     ========================================================================== */
+
+  img {
+    font-style: italic; /* [1] */
+    background-repeat: no-repeat; /* [2] */
+    background-size: cover; /* [2] */
+    shape-margin: var(--defaults-shape-margin, 0); /* [3] */
+  }
+
+
+
+
+
+  /* iframe defaults.
+   *
+   * 1. Remove whitespace beneath `iframe`s
+   * 2. Ensure `iframe`s remain fluid and never exceed their container’s width.
+   * 3. Remove default border.
+     ========================================================================== */
+
+  iframe {
+    vertical-align: middle; /* [1] */
+    max-inline-size: 100%; /* [2] */
+    border: none; /* [3] */
+  }
+
+
+
+
+  /* Make keyboard navigation a little less disorientating by smoothly scrolling
+   * (rather than jumping) to elements focused outside of the viewport.
+     ========================================================================== */
+
+  @media (prefers-reduced-motion: no-preference) {
+
+    html:focus-within {
+      scroll-behavior: smooth;
+    }
+
+  }
+
+
+
+
+
+  /* Place `:target`ed elements a comfortable distance from the edge of the
+   * viewport. Inert unless configured.
+     ========================================================================== */
+
+  :target {
+    scroll-margin-block-start: var(--defaults-scroll-margin, 0);
+  }
+
+
+
+
+  /* Click affordances.
+   *
+   * Lightly opinionated but generally helpful. Make interactive, clickable
+   * elements appear as such.
+     ========================================================================== */
+
+  @media (hover: hover) {
+
+    summary,
+    :is(button,
+        input:is(
+        [type=submit],
+        [type=button],
+        [type=file],
+        [type=image],
+        [type=reset],
+        [type=checkbox],
+        [type=radio])):not([disabled]) {
+      cursor: pointer;
+    }
+
+  }
+
+
+
 
 }
