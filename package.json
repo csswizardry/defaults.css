@@ -29,12 +29,12 @@
   "scripts": {
     "clean": "rimraf dist .tmp",
     "prebuild": "rimraf dist .tmp && mkdir -p dist .tmp",
-    "build": "node scripts/banner.js defaults.css > .tmp/defaults.bannered.css && lightningcss --minify --sourcemap .tmp/defaults.bannered.css -o dist/defaults.min.css",
+    "build": "node scripts/banner.js defaults.css > .tmp/defaults.bannered.css && csso .tmp/defaults.bannered.css --comments exclamation -o dist/defaults.min.css -m file",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
-    "lightningcss-cli": "^1.27.0",
-    "rimraf": "^6.0.0"
+    "csso": "^5.0.5",
+    "rimraf": "^6.0.1"
   },
   "publishConfig": {
     "access": "public",
