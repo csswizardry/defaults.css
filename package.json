@@ -1,6 +1,6 @@
 {
   "name": "@csswizardry/defaults.css",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A thoroughly modern, light-touch CSS reset for people who like writing CSS.",
   "license": "MIT",
   "author": "Harry Roberts <harry@csswizardry.com>",
@@ -12,7 +12,13 @@
   "bugs": {
     "url": "https://github.com/csswizardry/defaults.css/issues"
   },
-  "keywords": ["css", "reset", "normalize", "baseline", "defaults"],
+  "keywords": [
+    "css",
+    "reset",
+    "normalize",
+    "baseline",
+    "defaults"
+  ],
   "style": "dist/defaults.min.css",
   "files": [
     "dist/defaults.min.css",
