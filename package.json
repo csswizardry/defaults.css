@@ -21,8 +21,9 @@
     "README.md"
   ],
   "scripts": {
-    "clean": "rimraf dist",
-    "build": "mkdir -p dist && lightningcss --minify --sourcemap defaults.css -o dist/defaults.min.css",
+    "clean": "rimraf dist .tmp",
+    "prebuild": "rimraf dist .tmp && mkdir -p dist .tmp",
+    "build": "node scripts/banner.js defaults.css > .tmp/defaults.bannered.css && lightningcss --minify --sourcemap .tmp/defaults.bannered.css -o dist/defaults.min.css",
     "prepublishOnly": "npm run build"
   },
   "devDependencies": {
