@@ -132,16 +132,12 @@ html {
 /* Set consistent `h1` sizing across browsers.
  *
  * Blink and WebKit style nested `h1`s differently. Let’s normalise to the
- * generic use-case in keeping with Firefox. Only scope the rule to relevant
- * browser to reduce DevTools noise.
+ * generic use-case in keeping with Firefox. Note that they also alter the
+ * `margin` but as we’ve removed that above, we don’t need to address it here.
    ========================================================================== */
 
-@supports selector(:-webkit-any(article, aside, nav, section) h1) {
-
-  h1 {
-    font-size: 2em;
-  }
-
+h1 {
+  font-size: 2em;
 }
 
 
