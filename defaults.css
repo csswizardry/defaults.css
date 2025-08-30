@@ -368,6 +368,22 @@ picture {
 
 
 
+/* iframe defaults.
+ *
+ * 1. Remove whitespace beneath `iframe`s
+ * 2. Ensure `iframe`s remain fluid and never exceed their container’s width.
+ * 3. Remove default border.
+   ========================================================================== */
+
+iframe {
+  vertical-align: middle; /* [1] */
+  max-inline-size: 100%; /* [2] */
+  border: none; /* [3] */
+}
+
+
+
+
 /* Place `:target`ed elements a comfortable distance from the edge of the
  * viewport. Inert unless configured.
    ========================================================================== */
