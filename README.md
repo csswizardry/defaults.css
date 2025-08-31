@@ -56,16 +56,20 @@ In a couple of locations, you can pass in your own configuration to customise
 `defaults.css` to your own needs. The three areas of customisation as of 0.1.0
 are:
 
-* **Vertical rhythm:** Set a baseline grid on typographical elements by
-  defining `--defaults-margin-bottom` in your project, e.g.:
+* **[Vertical
+  rhythm](https://github.com/csswizardry/defaults.css/blob/2500bdec4896ee0856ba70bccbe755a61358f3b4/defaults.css#L95):**
+  Set a baseline grid on typographical elements by defining
+  `--defaults-margin-bottom` in your project, e.g.:
   ```css
   :root {
     --defaults-margin-bottom: 1.5rem;
   }
   ```
-* **Shape margins:** If you want floated images to have a specific margin that
-  hugs their shape, define your own `--defaults-shape-margin`.
-* **Scroll margin:** If you want `:target`ed elements to sit a small distance
+* **[Shape
+  margins](https://github.com/csswizardry/defaults.css/blob/2500bdec4896ee0856ba70bccbe755a61358f3b4/defaults.css#L320):**
+  If you want floated images to have a specific margin that hugs their shape,
+  define your own `--defaults-shape-margin`.
+* **[Scroll margin](https://github.com/csswizardry/defaults.css/blob/2500bdec4896ee0856ba70bccbe755a61358f3b4/defaults.css#L364):** If you want `:target`ed elements to sit a small distance
   from the edge of the viewport, define `--defaults-scroll-margin` in your own
   project.
 
