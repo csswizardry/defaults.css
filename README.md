@@ -2,7 +2,7 @@
 
 _A thoroughly modern, light-touch CSS reset for people who like writing CSS._
 
-<img src=https://web-platform-dx.github.io/web-features/assets/img/baseline-wordmark.png alt="Baseline" width=250 height=55>
+![](https://web-platform-dx.github.io/web-features/assets/img/baseline-wordmark.png)
 
 `defaults.css` is a Baseline-compatible CSS reset/normalise that weighs less
 than a kilobyte. It removes the bulk of unwanted browser defaults as well as
@@ -14,13 +14,11 @@ $ npm i @csswizardry/defaults.css
 
 ## 👀 At a Glance
 
-<ul>
-  <li style="list-style-type: '✅ ';">Baseline compatible
-  <li style="list-style-type: '🧹 ';">Removes only unwanted defaults
-  <li style="list-style-type: '🔄 ';">Normalises and resets in one pass
-  <li style="list-style-type: '🪶 ';"><1kb gzipped
-  <li style="list-style-type: '🎛️ ';">Configurable if desired
-</ul>
+* ✅ Baseline compatible
+* 🧹 Removes only unwanted defaults
+* 🔄 Normalises and resets in one pass
+* 🪶 <1kb gzipped
+* 🎛️ Configurable if desired
 
 ## 🧩 Patterns and Paradigms
 
