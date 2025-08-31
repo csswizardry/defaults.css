@@ -1,7 +1,7 @@
 {
   "name": "@csswizardry/defaults.css",
   "version": "0.2.0",
-  "description": "A thoroughly modern, light-touch CSS reset for people who like writing CSS.",
+  "description": "A thoroughly modern, light-touch reset for people who like writing CSS.",
   "license": "MIT",
   "author": "Harry Roberts <harry@csswizardry.com>",
   "homepage": "https://github.com/csswizardry/defaults.css#readme",

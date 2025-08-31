@@ -1,6 +1,6 @@
 # `defaults.css`
 
-_A thoroughly modern, light-touch CSS reset for people who like writing CSS._
+_A thoroughly modern, light-touch reset for people who like writing CSS._
 
 <img src=https://web-platform-dx.github.io/web-features/assets/img/baseline-wordmark.png alt="Baseline" width=250 height=55>
 
