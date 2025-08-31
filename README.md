@@ -20,6 +20,17 @@ $ npm i @csswizardry/defaults.css
 * 🪶 <1kb gzipped
 * 🎛️ Configurable if desired
 
+## ✨ Modern
+
+`defaults.css` is [Baseline](https://web.dev/baseline)-compatible. It uses
+[cascade
+layers](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers),
+[logical
+properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_logical_properties_and_values),
+[custom
+properties](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_cascading_variables/Using_CSS_custom_properties),
+and more. It’s a modern reset for a modern web.
+
 ## 🧩 Patterns and Paradigms
 
 `defaults.css` is light-touch by default. It doesn’t really do _much_; certainly
@@ -52,7 +63,7 @@ There’s no point seeing `-webkit-text-size-adjust` in Firefox’s DevTools.
 
 ## ⚙️ Configuration
 
-In a couple of locations, you can pass in your own configuration to customise
+In a handful of locations, you can pass in your own configuration to customise
 `defaults.css` to your own needs. The three areas of customisation as of 0.1.0
 are:
 
@@ -108,4 +119,4 @@ contributions.
 It goes without saying,
 [Normalize.css](https://github.com/necolas/normalize.css) redefined the genre.
 Now that cross-browser inconsistencies are far fewer, our lives are a lot
-easier.
+easier—that makes `defaults.css` a lot smaller.
