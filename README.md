@@ -69,7 +69,7 @@ are:
   from the edge of the viewport, define `--defaults-scroll-margin` in your own
   project.
 
-It’s worth noting that **if you don’t configure and of these settings,
+It’s worth noting that **if you don’t configure any of these settings,
 `defaults.css` does nothing at all**: it will never make opinionated decisions
 without your permission.
 
