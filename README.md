@@ -2,6 +2,8 @@
 
 _A thoroughly modern, light-touch CSS reset for people who like writing CSS._
 
+![](https://web-platform-dx.github.io/web-features/assets/img/baseline-wordmark.png)
+
 `defaults.css` is a Baseline-compatible CSS reset/normalise that weighs less
 than a kilobyte. It removes the bulk of unwanted browser defaults as well as
 smoothing out some inconsistencies. It’s part reset, part normalise.
@@ -10,15 +12,15 @@ smoothing out some inconsistencies. It’s part reset, part normalise.
 $ npm i @csswizardry/defaults.css
 ```
 
-## At a Glance
+## 👀 At a Glance
 
-* Baseline compatible
-* Removes only unwanted defaults
-* Normalises and resets in one pass
-* <1kb gzipped
-* Configurable if desired
+* ✅ Baseline compatible
+* 🧹 Removes only unwanted defaults
+* 🔄 Normalises and resets in one pass
+* 🪶 <1kb gzipped
+* 🎛️ Configurable if desired
 
-## Patterns and Paradigms
+## 🧩 Patterns and Paradigms
 
 `defaults.css` is light-touch by default. It doesn’t really do _much_; certainly
 nothing that you wouldn’t want it to do.
@@ -48,10 +50,11 @@ e.g.:
 
 There’s no point seeing `-webkit-text-size-adjust` in Firefox’s DevTools.
 
-## Configuration
+## ⚙️ Configuration
 
 In a couple of locations, you can pass in your own configuration to customise
-`defaults.css` to your own needs. The three areas of customisation at 0.1.0 are:
+`defaults.css` to your own needs. The three areas of customisation as of 0.1.0
+are:
 
 * **Vertical rhythm:** Set a baseline grid on typographical elements by
   defining `--defaults-margin-bottom` in your project, e.g.:
@@ -70,7 +73,25 @@ It’s worth noting that **if you don’t configure and of these settings,
 `defaults.css` does nothing at all**: it will never make opinionated decisions
 without your permission.
 
-## Contributions
+### 🥞 Cascade Layers
+
+`defaults.css` uses CSS’ [Cascade
+Layers](https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics/Cascade_layers)
+to isolate and restrict its reach. If you don’t use Cascade Layers in your own
+project, that’s perfect—you don’t need to do anything at all and your own CSS
+will always, automatically, take precedence, no matter where `defaults.css` is
+included.
+
+If you are using Cascade Layers, `defaults.css` is wrapped in `@layer defaults
+{ … }`. You’ll need to add `defaults` to your own `@layer` declaration to ensure
+`defaults.css` is applied in the correct order, e.g.:
+
+```css
+@layer defaults, elements, components, utilities;
+       ‾‾‾‾‾‾‾‾
+```
+
+## 🤝 Contributions
 
 v0.1.0 had the sole criteria of being able to replace my combined
 [Normalize.css](https://necolas.github.io/normalize.css/) and [inuitcss
@@ -78,7 +99,7 @@ reset](https://github.com/inuitcss/inuitcss/blob/develop/generic/_generic.reset.
 Now that it is published and public, I would gratefully accept feedback and
 contributions.
 
-## Credits
+## 🙏 Credits
 
 It goes without saying,
 [Normalize.css](https://github.com/necolas/normalize.css) redefined the genre.
