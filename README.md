@@ -2,7 +2,7 @@
 
 _A thoroughly modern, light-touch CSS reset for people who like writing CSS._
 
-![](https://web-platform-dx.github.io/web-features/assets/img/baseline-wordmark.png)
+<img src=https://web-platform-dx.github.io/web-features/assets/img/baseline-wordmark.png alt="Baseline" width=250 height=55>
 
 `defaults.css` is a Baseline-compatible CSS reset/normalise that weighs less
 than a kilobyte. It removes the bulk of unwanted browser defaults as well as
