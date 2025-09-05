@@ -27,17 +27,13 @@
 
 
 
-  /* Comfortable `box-sizing` defaults.
+  /* More comfortable `box-sizing` defaults.
+   *
+   * oddbird.net/2025/09/04/box-model
     ========================================================================= */
 
-  html {
+  * {
     box-sizing: border-box;
-  }
-
-  *,
-  *::before,
-  *::after {
-    box-sizing: inherit;
   }
 
 
